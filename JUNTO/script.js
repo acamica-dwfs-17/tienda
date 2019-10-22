@@ -96,11 +96,11 @@ var valorCantidad = document.getElementById('cantidad') //Es el input donde se p
 var botonAgregar = document.getElementById('agregar') //El botón que agregará la venta en el div derecho, en forma de nuevo div
 var tablaCarrito = document.getElementById('carrito') //El div derecho que contendrá a los nuevos divs de cada entrada de venta
 
-var entradaVenta = document.getElementById('venta') //El div contenedor para cada nueva venta
-var campo1 = document.getElementById('campos1')
-var campo1_1 = document.getElementById('campo1_1')
-var campo1_2 = document.getElementById('campo1_2')
-var campo2 = document.getElementById('campo2')
+var entradaVenta = document.getElementsByClassName('producto') //El div contenedor para cada nueva venta
+var campo1 = document.getElementsByClassName('col-info')
+var campo1_1 = document.getElementsByClassName('row1')
+var campo1_2 = document.getElementsByClassName('row2')
+var campo2 = document.getElementsByClassName('col-precio')
 
 var crearDiv = document.createElement('div')
 var crearP = document.createElement('p')
@@ -114,42 +114,42 @@ valorCantidad.addEventListener('change', function() {
 })
 
 botonAgregar.addEventListener('click', function() {
-	crearDiv.id = 'venta'
+	crearDiv.className = 'producto'
     tablaCarrito.appendChild(crearDiv)
 
-    crearDiv.id = 'campo1'
-    entradaVenta.appendChild(crearDiv)
+    crearDiv.className = 'col-info'
+    entradaVenta[0].appendChild(crearDiv)
 
-    crearDiv.id = 'campo2'
-    entradaVenta.appendChild(crearDiv)
+    crearDiv.className = 'col-precio'
+    entradaVenta[0].appendChild(crearDiv)
 
-    crearDiv.id = 'campo1_1'
-    campo1.appendChild(crearDiv)
+    crearDiv.className = 'row1'
+    campo1[0].appendChild(crearDiv)
 
-    crearDiv.id = 'campo1_2'
-    campo1.appendChild(crearDiv)
+    crearDiv.className = 'row2'
+    campo1[0].appendChild(crearDiv)
 
-    crearP.id = 'ventaCodigo'
+    crearP.className = 'elCodigo'
     crearP.innerText = objetoActivo.codigo
-    campo1_1.appendChild(crearP)
+    campo1_1[0].appendChild(crearP)
 
-    crearP.id = 'ventaCliente'
+    crearP.className = 'elCliente'
     crearP.innerText = objetoActivo.cliente
-    campo1_1.appendChild(crearP)
+    campo1_1[0].appendChild(crearP)
 
-    crearP.id = 'ventaNombre'
+    crearP.className = 'elProducto'
     crearP.innerText = objetoActivo.nombre
-    campo1_2.appendChild(crearP)
+    campo1_2[0].appendChild(crearP)
 
-    crearP.id = 'ventaCantidad'
+    crearP.className = 'laCantidad'
     crearP.innerText = valorCantidad
-    campo1_2.appendChild(crearP)
+    campo1_2[0].appendChild(crearP)
 
-    crearP.id = 'ventaPrecioUnitario'
+    crearP.className = 'precio-unitario'
     crearP.innerText = objetoActivo.precio
-    campo2.appendChild(crearP)
+    campo2[0].appendChild(crearP)
 
-    crearP.id = 'ventaPrecioTotal'
+    crearP.className = 'precio-total'
     crearP.innerText = objetoActivo.precio * valorCantidad
-    campo2.appendChild(crearP)
+    campo2[0].appendChild(crearP)
 })
