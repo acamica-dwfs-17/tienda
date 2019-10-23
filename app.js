@@ -1,44 +1,46 @@
 var listaProductos = []
 
-
-
 var carrito = {
     items: [],
-    existeItem: function(codigo) {
+    existeItem: function (codigo) {
         var existe = false
         this.items.forEach(element => {
-            if(element.codigo == codigo)
+            if (element.codigo == codigo)
                 existe = true;
         });
         return existe;
     },
-    agregarItem: function(codigo, cantidad, precioUnitario) {
-        if(!this.existeItem(codigo)) {
-            this.items.push({codigo, cantidad, precioUnitario})
+    agregarItem: function (codigo, cantidad, precioUnitario) {
+        if (!this.existeItem(codigo)) {
+            this.items.push({
+                codigo,
+                cantidad,
+                precioUnitario
+            })
         } else {
             for (let index = 0; index < this.items.length; index++) {
-                if(this.items[index].codigo==codigo){
-                    this.items[index].cantidad+=cantidad
-                } 
-                
+                if (this.items[index].codigo == codigo) {
+                    this.items[index].cantidad += cantidad
+                }
+
             }
         }
     },
-    obtenerTotal: function() {
+    obtenerTotal: function () {
         var suma = 0
         this.items.forEach(element => {
-            suma+=element.precioUnitario*element.cantidad
+            suma += element.precioUnitario * element.cantidad
         });
         return suma
     },
-    obtenerCantTotal: function() {
+    obtenerCantTotal: function () {
         var suma = 0
         this.items.forEach(element => {
-            suma+=element.cantidad
+            suma += element.cantidad
         });
         return suma
     }
-    
+
 }
 
 function crearProducto(codigo, nombre, url, stock, precio) {
@@ -76,17 +78,17 @@ function agregarACarro(e) {
     console.log(codigo)
     var prod
     listaProductos.forEach(element => {
-        if(element.codigo == codigo) {
+        if (element.codigo == codigo) {
             prod = element
         }
     });
-    if(prod!=undefined) {
+    if (prod != undefined) {
         var cant = parseInt(prompt(`Ingresa la cantidad de ${prod.nombre} a comprar`))
         carrito.agregarItem(prod.codigo, cant, prod.precio)
 
         console.log(carrito.obtenerCantTotal(), carrito.obtenerTotal())
 
-        document.getElementById('cant').innerHTML  = `${carrito.obtenerCantTotal()}`
+        document.getElementById('cant').innerHTML = `${carrito.obtenerCantTotal()}`
         document.getElementById('precio').innerHTML = `$ ${carrito.obtenerTotal()}`
     }
 }
@@ -95,14 +97,14 @@ function cargarProductos(e) {
     let mainElement = document.getElementsByTagName('main')[0]
 
     for (const key in listaProductos) {
-            const element = listaProductos[key];
+        const element = listaProductos[key];
     }
 
     for (let index = 0; index < listaProductos.length; index++) {
         const element = listaProductos[index];
-        
+
     }
-    listaProductos.forEach(function(element) {
+    listaProductos.forEach(function (element) {
         let article = document.createElement('article')
         let img = document.createElement('img')
         let h3 = document.createElement('h3')
@@ -112,18 +114,18 @@ function cargarProductos(e) {
         img.src = element.imagen
         h3.innerHTML = element.nombre
         label.innerHTML = `$ ${element.precio}`
-        
+
 
         article.appendChild(img)
         article.appendChild(h3)
         article.appendChild(label)
-        if(element.stock>=3) {
+        if (element.stock >= 3) {
             button.innerHTML = 'Comprar'
             button.setAttribute('data-codigo', element.codigo)
             button.addEventListener('click', agregarACarro)
             article.appendChild(button)
         }
-        
+
 
         mainElement.appendChild(article)
     });
