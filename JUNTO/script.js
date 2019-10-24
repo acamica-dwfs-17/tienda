@@ -115,42 +115,46 @@ valorCantidad.addEventListener('change', function () {
 botonAgregar.addEventListener('click', function () {
     crearDiv.className = 'producto'
     tablaCarrito.appendChild(crearDiv)
-
+    let lengthEntradaVenta = entradaVenta.length - 2
     crearDiv.className = 'col-info'
-    entradaVenta[entradaVenta.length - 2].appendChild(crearDiv)
+    entradaVenta[lengthEntradaVenta].appendChild(crearDiv)
 
     crearDiv.className = 'col-precio'
-    entradaVenta[entradaVenta.length - 2].appendChild(crearDiv)
+    entradaVenta[lengthEntradaVenta].appendChild(crearDiv)
 
+    let lengthCampo1 = campo1.length - 2
     crearDiv.className = 'row1'
-    campo1[campo1.length - 2].appendChild(crearDiv)
+    campo1[lengthCampo1].appendChild(crearDiv)
 
     crearDiv.className = 'row2'
-    campo1[campo1.length - 2].appendChild(crearDiv)
+    campo1[lengthCampo1].appendChild(crearDiv)
 
+    let lengthCampo1_1 = campo1_1.length - 2
     crearP.className = 'elCodigo'
     crearP.innerText = objetoActivo.codigo
-    campo1_1[campo1_1.length - 2].appendChild(crearP)
+    campo1_1[lengthCampo1_1].appendChild(crearP)
 
     crearP.className = 'elCliente'
     crearP.innerText = objetoActivo.cliente
-    campo1_1[campo1_1.length - 2].appendChild(crearP)
+    campo1_1[lengthCampo1_1].appendChild(crearP)
 
+    let lengthCampo2_1 = campo1_2.length - 2
     crearP.className = 'elProducto'
     crearP.innerText = objetoActivo.nombre
-    campo1_2[campo1_2.length - 2].appendChild(crearP)
+    campo1_2[lengthCampo2_1].appendChild(crearP)
 
     crearP.className = 'laCantidad'
     crearP.innerText = valorCantidad
-    campo1_2[campo1_2.length - 2].appendChild(crearP)
+    campo1_2[lengthCampo2_1].appendChild(crearP)
 
+    let lengthCampo2 = campo2.length - 2
     crearP.className = 'precio-unitario'
     crearP.innerText = objetoActivo.precio
-    campo2[campo2.length - 2].appendChild(crearP)
+    campo2[lengthCampo2].appendChild(crearP)
 
     crearP.className = 'precio-total'
     crearP.innerText = objetoActivo.precio * valorCantidad
-    campo2[campo2.length - 2].appendChild(crearP)
+    campo2[lengthCampo2].appendChild(crearP)
 })
 
 //ENIO
