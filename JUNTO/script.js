@@ -1,20 +1,19 @@
 // ADRIAN
- var productos = [
-    {
+var productos = [{
         codigo: 1234,
-        nombre : "manzana",
+        nombre: "manzana",
         cantidad: 2,
         precio: 4,
         img: "salfkadfkl.jpg"
     },
     {
         codigo: 5678,
-        nombre : "banana",
+        nombre: "banana",
         cantidad: 2,
         precio: 4,
         img: "salfkadfkl.jpg"
     },
-] 
+]
 
 var objetoActivo = {};
 
@@ -24,14 +23,14 @@ function buscar() {
     var buscador = document.getElementById("codigo");
     var codigoABuscar = parseInt(buscador.value);
     for (let i = 0; i < productos.length; i++) {
-        if(productos[i].codigo===codigoABuscar){
+        if (productos[i].codigo === codigoABuscar) {
             objetoActivo = productos[i];
             encontrado = true;
             buscador.value = "Código";
             break;
         }
     }
-    if(!encontrado) {
+    if (!encontrado) {
         alert("Referencia inexistente");
         objetoActivo = {};
         buscador.value = "Código";
@@ -41,7 +40,7 @@ function buscar() {
 }
 
 var lupa = document.getElementById("lupa");
-lupa.addEventListener("click",buscar);
+lupa.addEventListener("click", buscar);
 
 
 
@@ -52,39 +51,39 @@ lupa.addEventListener("click",buscar);
 // MARIANO
 function mostrarObjetoActivo() {
 
-  var cliente = document.getElementById("campoCliente");
+    var cliente = document.getElementById("campoCliente");
 
-  var section = document.getElementById('resultado');
-  var div = document.createElement('div');
+    var section = document.getElementById('resultado');
+    var div = document.createElement('div');
 
-  //cliente
-  var productoCliente = document.createElement('h6');
-  productoCliente.textContent = cliente.value;
-  div.appendChild(productoCliente);
+    //cliente
+    var productoCliente = document.createElement('h6');
+    productoCliente.textContent = cliente.value;
+    div.appendChild(productoCliente);
 
 
-  //producto
-  var productoNombre = document.createElement('h3');
-  productoNombre.textContent = objetoActivo.nombre;
-  div.appendChild(productoNombre);
+    //producto
+    var productoNombre = document.createElement('h3');
+    productoNombre.textContent = objetoActivo.nombre;
+    div.appendChild(productoNombre);
 
-  // lo comento porque no se si van a mandar imagen de producto
-  // var productoImagen = document.createElement('img');
-  // productoImagen.src = objetoActivo.imagen;
-  // productoImagen.style.width = '150px';
-  // productoImagen.style.height = '150px';
-  // div.appendChild(productoImagen);
+    // lo comento porque no se si van a mandar imagen de producto
+    // var productoImagen = document.createElement('img');
+    // productoImagen.src = objetoActivo.imagen;
+    // productoImagen.style.width = '150px';
+    // productoImagen.style.height = '150px';
+    // div.appendChild(productoImagen);
 
-  //codigo
-  var productoCodigo = document.createElement('h5');
-  productoCodigo.textContent = objetoActivo.codigo;
-  div.appendChild(productoCodigo);
+    //codigo
+    var productoCodigo = document.createElement('h5');
+    productoCodigo.textContent = objetoActivo.codigo;
+    div.appendChild(productoCodigo);
 
-  //precio
-  var productoPrecio = document.createElement('h4');
-  productoPrecio.textContent = '$' + objetoActivo.precio;
-  div.appendChild(productoPrecio);
-  section.appendChild(div);
+    //precio
+    var productoPrecio = document.createElement('h4');
+    productoPrecio.textContent = '$' + objetoActivo.precio;
+    div.appendChild(productoPrecio);
+    section.appendChild(div);
 
 }
 
@@ -105,7 +104,7 @@ var campo2 = document.getElementsByClassName('col-precio')
 var crearDiv = document.createElement('div')
 var crearP = document.createElement('p')
 
-valorCantidad.addEventListener('change', function() {
+valorCantidad.addEventListener('change', function () {
     if (valorCantidad.innerText > objetoActivo.stock) {
         botonAgregar.disabled = true;
     } else if (valorCantidad.innerText <= objetoActivo.stock) {
@@ -113,8 +112,8 @@ valorCantidad.addEventListener('change', function() {
     }
 })
 
-botonAgregar.addEventListener('click', function() {
-	crearDiv.className = 'producto'
+botonAgregar.addEventListener('click', function () {
+    crearDiv.className = 'producto'
     tablaCarrito.appendChild(crearDiv)
 
     crearDiv.className = 'col-info'
@@ -153,3 +152,24 @@ botonAgregar.addEventListener('click', function() {
     crearP.innerText = objetoActivo.precio * valorCantidad
     campo2[campo2.length - 2].appendChild(crearP)
 })
+
+//ENIO
+var carrito = [{
+        codigo: 1234,
+        nombre: "manzana",
+        cantidad: 2,
+        precio: 4,
+        img: "salfkadfkl.jpg"
+    },
+    {
+        codigo: 5678,
+        nombre: "banana",
+        cantidad: 2,
+        precio: 4,
+        img: "salfkadfkl.jpg"
+    },
+]
+
+/*for (i = 0; i < carrito.length; i++)
+    (j = 0; j < carrito.length; j++)
+  */  
