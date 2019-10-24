@@ -1,0 +1,82 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Source Sans Pro', sans-serif;}
+
+
+.contenedor { position: absolute; top: 40px; bottom: 40px; left: 40px; right: 40px; border: 2px solid #0984e3; box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+ display: flex;}
+
+
+.contenedor .izq { width: 300px; background-color: #0984e3; text-align: center;}
+
+.contenedor .izq input { width: 80%; margin:auto; padding: 10px 0px; text-align: center; background-color: #0984e3; border: none; border-bottom: 1px solid  #7abdf1; color: #FFF; margin-top: 30px; font-size: 18px; font-weight: 300;}
+.contenedor .izq .btn-buscar { background-color: #74b9ff; border: none; padding: 15px 0px; font-weight: bold; cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition:all 0.25s ease 0s;
+    -o-transition:all 0.25s ease 0s;
+    -ms-transition:all 0.25s ease 0s;
+    -webkit-transition:all 0.25s ease 0s;}
+.contenedor .izq .btn-buscar:hover { background-color: #116eb5;}
+.contenedor .izq #agregar { background-color: #74b9ff; border: none; padding: 15px 0px; font-weight: bold; margin-top: 20px;cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition:all 0.25s ease 0s;
+    -o-transition:all 0.25s ease 0s;
+    -ms-transition:all 0.25s ease 0s;
+    -webkit-transition:all 0.25s ease 0s;}
+.contenedor .izq #agregar:hover { background-color: #116eb5;}
+
+.contenedor .der { width: 300px; flex: 1; position: relative;}
+
+
+#resultado { margin-top: 50px; margin-bottom: 30px;}
+#resultado h2 {color: #FFF; ;}
+#resultado h3 {color: #FFF; font-size: 26px;margin-bottom: 10px;}
+#resultado h4 {color: #FFF; font-size: 30px; font-weight: 300;}
+#resultado h5 {color: #FFF; font-weight: 600; font-size: 20px; margin-bottom: 10px;}
+#resultado h6 {color: #FFF;text-transform: uppercase; font-size: 18px; font-weight: 300; letter-spacing: 1px; margin-bottom: 4px;}
+
+
+.indica-cantidad { width: 80%; margin:auto; border-top: 1px solid #FFF; padding-top: 0px;}
+.indica-cantidad input { margin-top: 10px;}
+
+
+
+#btn-finalizar { position: absolute;background-color: #116eb5; border: none; padding: 15px 30px; font-weight: bold; margin-top: 20px;cursor: pointer; color: #FFF; font-size: 17px; bottom: 20px; right: 5%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition:all 0.25s ease 0s;
+    -o-transition:all 0.25s ease 0s;
+    -ms-transition:all 0.25s ease 0s;
+    -webkit-transition:all 0.25s ease 0s;}
+    #btn-finalizar:hover  { background-color: #0d5993;}
+
+
+
+
+
+#carrito { position: relative; width: 90%; margin:auto; height: 80%; margin-top: 30px;  overflow-y: scroll; padding-right: 10px;}
+
+.producto { width: 100%; height: auto; border: 1px solid #CCC; box-sizing: border-box; padding: 14px; display: flex; margin-bottom: 20px;}
+
+.producto .col-info { flex: 1; display: flex; flex-direction: column;}
+.producto .col-info .row1 { display: flex; margin-bottom: 10px;}
+.producto .col-info .row1 p.elCodigo { background-color: #CCC; padding: 3px 8px; color: #333; font-size: 14px; font-weight: 600; margin-right: 10px;}
+.producto .col-info .row1 p.elCliente { background-color: #0d5993; padding: 3px 8px; color: #FFF; font-size: 14px; font-weight: 600;}
+.producto .col-info .row2 { display: flex; align-items: baseline;}
+.producto .col-info .row2 p.elProducto { font-size: 30px;}
+.producto .col-info .row2 p.laCantidad { font-size: 24px; font-weight: 300; margin-left: 10px;}
+
+.producto .col-precio { width: 300px; display: flex; flex-direction: row; align-items: flex-end; justify-content: flex-end;}
+.producto .col-precio p.precio-unitario { font-size: 24px; margin-right: 20px; font-weight: 300;}
+.producto .col-precio p.precio-total { font-size: 24px; margin-right: 20px; font-weight: bold;}
+
+
+.producto.total { background-color: #0d5993;}
+.producto.total p { color: #FFF !important;}
+
