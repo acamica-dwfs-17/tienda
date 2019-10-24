@@ -23,16 +23,17 @@ function logSubmit(event) {
     console.log(event);
     nom = document.getElementById('nom').value;
     cod = document.getElementById('cod').value;
-/*     if (!productos.includes(cod)) {
-    } */
+    /*     if (!productos.includes(cod)) {
+        } */
     img = document.getElementById('img').value;
     precio = document.getElementById('precio').value;
     stock = document.getElementById('stock').value;
     var producto = crearProducto(nom, cod, img, precio, stock);
     console.log(producto);
 }
-function existe(codigo){
-   //*completar
+
+function existe(codigo) {
+    //*completar
 }
 
 
