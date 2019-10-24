@@ -118,38 +118,38 @@ botonAgregar.addEventListener('click', function() {
     tablaCarrito.appendChild(crearDiv)
 
     crearDiv.className = 'col-info'
-    entradaVenta[0].appendChild(crearDiv)
+    entradaVenta[entradaVenta.length - 2].appendChild(crearDiv)
 
     crearDiv.className = 'col-precio'
-    entradaVenta[0].appendChild(crearDiv)
+    entradaVenta[entradaVenta.length - 2].appendChild(crearDiv)
 
     crearDiv.className = 'row1'
-    campo1[0].appendChild(crearDiv)
+    campo1[campo1.length - 2].appendChild(crearDiv)
 
     crearDiv.className = 'row2'
-    campo1[0].appendChild(crearDiv)
+    campo1[campo1.length - 2].appendChild(crearDiv)
 
     crearP.className = 'elCodigo'
     crearP.innerText = objetoActivo.codigo
-    campo1_1[0].appendChild(crearP)
+    campo1_1[campo1_1.length - 2].appendChild(crearP)
 
     crearP.className = 'elCliente'
     crearP.innerText = objetoActivo.cliente
-    campo1_1[0].appendChild(crearP)
+    campo1_1[campo1_1.length - 2].appendChild(crearP)
 
     crearP.className = 'elProducto'
     crearP.innerText = objetoActivo.nombre
-    campo1_2[0].appendChild(crearP)
+    campo1_2[campo1_2.length - 2].appendChild(crearP)
 
     crearP.className = 'laCantidad'
     crearP.innerText = valorCantidad
-    campo1_2[0].appendChild(crearP)
+    campo1_2[campo1_2.length - 2].appendChild(crearP)
 
     crearP.className = 'precio-unitario'
     crearP.innerText = objetoActivo.precio
-    campo2[0].appendChild(crearP)
+    campo2[campo2.length - 2].appendChild(crearP)
 
     crearP.className = 'precio-total'
     crearP.innerText = objetoActivo.precio * valorCantidad
-    campo2[0].appendChild(crearP)
+    campo2[campo2.length - 2].appendChild(crearP)
 })
