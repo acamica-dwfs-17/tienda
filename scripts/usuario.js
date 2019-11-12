@@ -72,3 +72,4 @@ var agregarDirecciones = function() {
 //Ejemplo
 var pedrito = new usuario(aumentarContador, inputNombre, agregarDirecciones);
 // ----------------------------------
+//fdsfdsfds
