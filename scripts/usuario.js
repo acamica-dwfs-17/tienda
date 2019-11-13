@@ -1,10 +1,7 @@
 //Código de Albano, Valeria y Ramiro:
-// ----------------------------------
-//Variable que cuenta las instancias existentes de la clase usuario y con ello designa automáticamente un id numérico
-var contadorUsuarios = 0
 
 //Clase para registrar usuarios nuevos
-class usuario {
+class Usuario {
     constructor(id, nombreUsuario, direcciones) {
         this.id = id;
         this.nombreUsuario = nombreUsuario;
@@ -21,19 +18,19 @@ class usuario {
         let inputSaldo = document.getElementById('inputSaldo').value;
 
         if (inputSaldo > 0 && inputSaldo < 100000) {
-        this.saldo += inputSaldo;
+            this.saldo += inputSaldo;
         } else {
             alert('Ingrese un número válido (mayor a 0 y menor a 100.000).')
         }
     }
 
     actualizarDatos() {
-        
-    }   
+        //Para hacer.
+    }
 }
 
 //Clase para agregar direcciones como propiedad de un usuario
-class direccion {
+class Direccion {
     constructor(calle, altura, piso, departamento, localidad, codigoPostal) {
         this.calle = calle;
         this.altura = altura;
@@ -44,13 +41,8 @@ class direccion {
     }
 }
 
-//Función para aumentar el contador de usuarios en 1 (se aplica en el new usuario)
-var aumentarContador = function() {
-    contadorUsuarios++
-}
-
 //Función que añade una dirección a un array usando DOM (el array es luego agregado a una propiedad del usuario como parámetro en new usuario)
-var agregarDirecciones = function() {
+var agregarDirecciones = function () {
     let inputCalle = document.getElementsByClassName('inputCalle');
     let inputAltura = document.getElementsByClassName('inputAltura');
     let inputPiso = document.getElementsByClassName('inputPiso');
@@ -60,9 +52,8 @@ var agregarDirecciones = function() {
 
     var dirArray = []
 
-    for(let i = 0; i < inputCalle.length; i++){
+    for (let i = 0; i < inputCalle.length; i++) {
         let dir = new direccion(inputCalle[i].value, inputAltura[i].value, inputPiso[i].value, inputDepartamento[i].value, inputLocalidad[i].value, inputCodigoPostal[i].value)
-
         dirArray.push(dir)
     }
 
@@ -70,6 +61,4 @@ var agregarDirecciones = function() {
 }
 
 //Ejemplo
-var pedrito = new usuario(aumentarContador, inputNombre, agregarDirecciones);
-// ----------------------------------
-//fdsfdsfds
+//var pedrito = new usuario(aumentarContador, inputNombre, agregarDirecciones);
