@@ -130,3 +130,25 @@ function cargarProductos(e) {
 }
 
 window.addEventListener('load', cargarProductos)
+
+
+var usuario = new Usuario(1, 'Pedrito');
+
+//Función que añade una dirección a un array usando DOM (el array es luego agregado a una propiedad del usuario como parámetro en new usuario)
+var agregarDirecciones = function () {
+    let inputCalle = document.getElementsByClassName('inputCalle');
+    let inputAltura = document.getElementsByClassName('inputAltura');
+    let inputPiso = document.getElementsByClassName('inputPiso');
+    let inputDepartamento = document.getElementsByClassName('inputDepartamento');
+    let inputLocalidad = document.getElementsByClassName('inputLocalidad');
+    let inputCodigoPostal = document.getElementsByClassName('inputCodigoPostal');
+
+    var dirArray = []
+
+    for (let i = 0; i < inputCalle.length; i++) {
+        let dir = new Direccion(inputCalle[i].value, inputAltura[i].value, inputPiso[i].value, inputDepartamento[i].value, inputLocalidad[i].value, inputCodigoPostal[i].value)
+        usuario.agregarDireccion(dir)
+    }
+
+    return dirArray
+}
