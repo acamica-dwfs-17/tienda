@@ -27,9 +27,3 @@ class Usuario {
         this.direcciones.push(direccion)
     }
 }
-
-
-
-
-//Ejemplo
-//var pedrito = new usuario(aumentarContador, inputNombre, agregarDirecciones);
